@@ -35,18 +35,16 @@ namespace MicroRabbitMQ.Infra.Bus
         public void Publish<T>(T @event) where T : Event
         {
             var factory = new ConnectionFactory { HostName = "localhost" };
-            using (var connection = factory.CreateConnection())
-            {
-                var eventName = @event.GetType().Name;
+            using var connection = factory.CreateConnection();
+            var eventName = @event.GetType().Name;
 
-                var channel = connection.CreateModel();
-                channel.QueueDeclare(eventName, false, false, false, null);
+            var channel = connection.CreateModel();
+            channel.QueueDeclare(eventName, false, false, false, null);
 
-                var message = JsonConvert.SerializeObject(@event);
-                var body = Encoding.UTF8.GetBytes(message);
+            var message = JsonConvert.SerializeObject(@event);
+            var body = Encoding.UTF8.GetBytes(message);
 
-                channel.BasicPublish(exchange: "", routingKey: eventName, null, body);
-            }
+            channel.BasicPublish(exchange: "", routingKey: eventName, null, body);
         }
 
         public void Subscribe<T, TH>()
@@ -109,10 +107,9 @@ namespace MicroRabbitMQ.Infra.Bus
             {
                 await ProccessEvent(eventName, message).ConfigureAwait(false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
-
         }
 
         private async Task ProccessEvent(string eventName, string message)
