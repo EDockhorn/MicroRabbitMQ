@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MicroRabbitMQ.Microservice.Banking.Domain\MicroRabbitMQ.Microservice.Banking.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
