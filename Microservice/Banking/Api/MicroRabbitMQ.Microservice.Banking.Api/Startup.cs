@@ -22,12 +22,14 @@ namespace MicroRabbitMQ.Microservice.Banking.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddDbContext<BankingDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("BankingDbConnection"));
             }
             );
 
+            services.AddControllers();
 
             services.AddRazorPages();
 
@@ -66,8 +68,9 @@ namespace MicroRabbitMQ.Microservice.Banking.Api
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("swagger/v1/swagger.json", "Banking Microservice V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Banking Microservice V1");
             });
+
 
             app.UseStaticFiles();
 
@@ -77,7 +80,7 @@ namespace MicroRabbitMQ.Microservice.Banking.Api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
