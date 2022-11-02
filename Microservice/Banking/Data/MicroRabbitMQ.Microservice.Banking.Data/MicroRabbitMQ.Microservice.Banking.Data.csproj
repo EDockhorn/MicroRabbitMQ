@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Application\MicroRabbitMQ.Microservice.Banking.Application\MicroRabbitMQ.Microservice.Banking.Application.csproj" />
     <ProjectReference Include="..\..\Domain\MicroRabbitMQ.Microservice.Banking.Domain\MicroRabbitMQ.Microservice.Banking.Domain.csproj" />
   </ItemGroup>
 

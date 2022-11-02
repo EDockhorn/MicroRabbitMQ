@@ -1,10 +1,8 @@
-﻿using MicroRabbitMQ.Microservice.Banking.Data.Context;
+﻿using MicroRabbitMQ.Microservice.Banking.Application.Models;
+using MicroRabbitMQ.Microservice.Banking.Data.Context;
 using MicroRabbitMQ.Microservice.Banking.Domain.Interfaces;
 using MicroRabbitMQ.Microservice.Banking.Domain.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MicroRabbitMQ.Microservice.Banking.Data.Repository
@@ -22,5 +20,6 @@ namespace MicroRabbitMQ.Microservice.Banking.Data.Repository
         {
             return _ctx.Accounts;
         }
+
     }
 }

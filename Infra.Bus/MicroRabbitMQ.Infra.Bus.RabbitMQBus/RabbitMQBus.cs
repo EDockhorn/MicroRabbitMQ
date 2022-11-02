@@ -107,7 +107,7 @@ namespace MicroRabbitMQ.Infra.Bus
             {
                 await ProccessEvent(eventName, message).ConfigureAwait(false);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
             }
         }

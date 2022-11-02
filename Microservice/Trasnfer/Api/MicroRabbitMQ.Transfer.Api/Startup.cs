@@ -1,6 +1,9 @@
 using MediatR;
+using MicroRabbitMQ.Domain.Core.Bus;
 using MicroRabbitMQ.Infra.IoC;
 using MicroRabbitMQ.Microservice.Transfer.Data.Context;
+using MicroRabbitMQ.Microservice.Transfer.Domain.EventHandlers;
+using MicroRabbitMQ.Microservice.Transfer.Domain.Events;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
 
 namespace MicroRabbitMQ.Transfer.Api
 {
@@ -41,7 +45,7 @@ namespace MicroRabbitMQ.Transfer.Api
             RegisterServices(services);
         }
 
-        private void RegisterServices(IServiceCollection services)
+        private static void RegisterServices(IServiceCollection services)
         {
             DependencyContainer.RegisterDependencies(services);
         }
@@ -66,6 +70,14 @@ namespace MicroRabbitMQ.Transfer.Api
             {
                 endpoints.MapControllers();
             });
+
+            ConfigureEventBus(app);
+        }
+
+        private static void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<TransferCreatedEvent, TransferEventHandler>();
         }
     }
 }

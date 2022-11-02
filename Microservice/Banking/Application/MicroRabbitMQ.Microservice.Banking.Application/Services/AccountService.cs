@@ -34,6 +34,7 @@ namespace MicroRabbitMQ.Microservice.Banking.Application.Services
             );
 
             _bus.SendCommand(transferCreateCommand);
+            
         }
     }
 }
