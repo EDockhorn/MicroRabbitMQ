@@ -22,12 +22,14 @@ namespace MicroRabbitMQ.Microservice.Transfer.Domain.EventHandlers
 
         public Task Handle(TransferCreatedEvent @event)
         {
-            var transferLog = new TransferLog
+            // TODO: TESTE DE INCLUSÃO NA BASE - REVER
+           
+            return _transferRepository.Add(new TransferLog
             {
-                FromAccount = @event.From, ToAccount = @event.To, TransferAmount = @event.Amount
-            };
-
-            return _transferRepository.Add(transferLog);
+                FromAccount = @event.From,
+                ToAccount = @event.To,
+                TransferAmount = @event.Amount
+            });
         }
     }
 }

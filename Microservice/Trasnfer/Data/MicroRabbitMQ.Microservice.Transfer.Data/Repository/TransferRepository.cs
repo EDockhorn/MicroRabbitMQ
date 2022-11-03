@@ -17,7 +17,9 @@ namespace MicroRabbitMQ.Microservice.Transfer.Data.Repository
 
         public Task Add(TransferLog transferLog)
         {
-            return Task.FromResult(_ctx.Add(transferLog));
+            _ctx.Add(transferLog);
+
+            return Task.FromResult(_ctx.SaveChanges());
         }
 
         public IEnumerable<TransferLog> GetTransferLogs()
