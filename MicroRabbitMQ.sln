@@ -49,11 +49,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7476A8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitMQ.Microservice.Transfer.Api", "Microservice\Trasnfer\Api\MicroRabbitMQ.Transfer.Api\MicroRabbitMQ.Microservice.Transfer.Api.csproj", "{A71191DF-FFFB-488A-BD76-DFB43D6EAB62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitMQ.Microservice.Transfer.Application", "Microservice\Trasnfer\Application\MicroRabbitMQ.Microservice.Transfer.Application\MicroRabbitMQ.Microservice.Transfer.Application.csproj", "{34F2AABF-6CA8-47FA-9B13-75283FAF5A29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitMQ.Microservice.Transfer.Application", "Microservice\Trasnfer\Application\MicroRabbitMQ.Microservice.Transfer.Application\MicroRabbitMQ.Microservice.Transfer.Application.csproj", "{34F2AABF-6CA8-47FA-9B13-75283FAF5A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitMQ.Microservice.Transfer.Data", "Microservice\Trasnfer\Data\MicroRabbitMQ.Microservice.Transfer.Data\MicroRabbitMQ.Microservice.Transfer.Data.csproj", "{55D0A60E-B6B8-4FCE-A1C4-C1269865DEB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitMQ.Microservice.Transfer.Data", "Microservice\Trasnfer\Data\MicroRabbitMQ.Microservice.Transfer.Data\MicroRabbitMQ.Microservice.Transfer.Data.csproj", "{55D0A60E-B6B8-4FCE-A1C4-C1269865DEB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitMQ.Microservice.Transfer.Domain", "Microservice\Trasnfer\Domain\MicroRabbitMQ.Microservice.Transfer.Domain\MicroRabbitMQ.Microservice.Transfer.Domain.csproj", "{2A94C7ED-CA73-41F0-8F90-72A76B71947B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitMQ.Microservice.Transfer.Domain", "Microservice\Trasnfer\Domain\MicroRabbitMQ.Microservice.Transfer.Domain\MicroRabbitMQ.Microservice.Transfer.Domain.csproj", "{2A94C7ED-CA73-41F0-8F90-72A76B71947B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.MVC", "Presentation\MicroRabbit.MVC\MicroRabbit.MVC\MicroRabbit.MVC.csproj", "{0E79B1F6-9495-4AB2-B89E-F0427C9AE72C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{2A94C7ED-CA73-41F0-8F90-72A76B71947B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A94C7ED-CA73-41F0-8F90-72A76B71947B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A94C7ED-CA73-41F0-8F90-72A76B71947B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E79B1F6-9495-4AB2-B89E-F0427C9AE72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E79B1F6-9495-4AB2-B89E-F0427C9AE72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E79B1F6-9495-4AB2-B89E-F0427C9AE72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E79B1F6-9495-4AB2-B89E-F0427C9AE72C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +137,7 @@ Global
 		{34F2AABF-6CA8-47FA-9B13-75283FAF5A29} = {98C45107-BE59-4AEE-AB65-D9DBB3BCE71F}
 		{55D0A60E-B6B8-4FCE-A1C4-C1269865DEB3} = {817FA261-064B-4661-A105-B75D16566AE3}
 		{2A94C7ED-CA73-41F0-8F90-72A76B71947B} = {7476A844-50FF-4AFB-8A1E-EEF98CF33C9B}
+		{0E79B1F6-9495-4AB2-B89E-F0427C9AE72C} = {129F8258-9F07-4A29-9D92-5A55145EC737}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91852D5B-E602-414A-8CC4-5C4D6107EC2B}
